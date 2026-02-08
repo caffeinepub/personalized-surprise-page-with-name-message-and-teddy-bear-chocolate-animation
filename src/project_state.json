@@ -1,13 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 9,
   "summary": "App to create a personalized surprise by entering a girlfriend's name and a custom message, then showing an animation of a teddy bear eating chocolate.",
   "architectural_notes": [
     "Animation polish request: add more detail to the teddy bear eating chocolate sequence (beyond current anime-style motion improvements)."
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Anime-style bite impact overlay burst, transparent background (anime-bite-impact.dim_512x512.png)\n- Anime-style chew motion lines overlay, transparent background (anime-chew-lines.dim_512x512.png)",
+  "known_issues": [
+    "Teddy bear animation: chocolate inside the teddy's hands is missing/does not render."
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-single-page-flow-where-the-user-can-enter-their-girlfriend-s-name-and-a-custom-message-then-tap-a-clear-call-to-action-e-g-surprise-to-reveal-the-personalized-surprise-view-displaying-the-entered-name-and-message",
@@ -78,6 +79,14 @@
       "title": "Increase the visual detail of the teddy bear eating chocolate animation by adding additional micro-actions and/or overlays (e.g., stronger head bob/squash-and-stretch during bite impact, subtle shake on crumbs, extra sparkle/impact accent) while keeping the current multi-phase structure (idle/anticipation/bite/chew/satisfied).",
       "reqIds": [
         "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-correct-the-teddy-eating-chocolate-animation-so-the-chocolate-bar-is-clearly-visible-inside-between-the-teddy-s-hands-not-missing-hidden-throughout-the-early-phases-while-keeping-the-rest-of-the-animation-and-visuals-unchanged",
+      "title": "Correct the teddy-eating-chocolate animation so the chocolate bar is clearly visible inside/between the teddy’s hands (not missing/hidden) throughout the early phases, while keeping the rest of the animation and visuals unchanged.",
+      "reqIds": [
+        "REQ-10"
       ],
       "version": 1
     }

@@ -1,83 +1,37 @@
 {
   "kind": "build_request",
-  "title": "Add synced eating sound effects + extra detail to teddy chocolate animation",
+  "title": "Fix missing chocolate rendering in teddy hands",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-7",
-      "text": "Add eating sound effects to the teddy bear eating chocolate animation, with bite/chew sounds timed to the existing animation phases (bite + each mouth open/close chew beat).",
+      "id": "REQ-10",
+      "text": "Correct the teddy-eating-chocolate animation so the chocolate bar is clearly visible inside/between the teddy’s hands (not missing/hidden) throughout the early phases, while keeping the rest of the animation and visuals unchanged.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4",
-          "msg-6"
+          "msg-3"
         ],
         "quotes": [
-          "Yes suree... Eating sounds and little bit more details to teddy bear eating chocolate animation"
+          "The chocolate inside the hands of the teddy is just missing. Please just correct that everything else is perfect"
         ]
       },
       "acceptanceCriteria": [
-        "When the animation reaches the 'bite' moment, a bite sound plays once.",
-        "During the 'chew' phase, short chew sounds play in sync with the existing mouthOpen toggles (multiple chews).",
-        "Sounds do not play when the user has prefers-reduced-motion enabled (match the current reduced-motion fallback behavior).",
-        "Audio assets are loaded from frontend static files (no backend serving)."
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Provide a simple user control to mute/unmute animation sound effects on the Surprise view, and ensure sound only starts after a user interaction that triggers the Surprise/Replay flow.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4",
-          "msg-6"
-        ],
-        "quotes": [
-          "Eating sounds"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A mute/unmute control is visible on the Surprise view (near the existing Replay Animation/Edit Message actions or within the animation area).",
-        "Default behavior allows sound during the animation after the user presses Create Surprise or Replay Animation.",
-        "Toggling mute immediately prevents any further bite/chew sounds from playing during that run and subsequent replays (until unmuted)."
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "text": "Increase the visual detail of the teddy bear eating chocolate animation by adding additional micro-actions and/or overlays (e.g., stronger head bob/squash-and-stretch during bite impact, subtle shake on crumbs, extra sparkle/impact accent) while keeping the current multi-phase structure (idle/anticipation/bite/chew/satisfied).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-4",
-          "msg-6"
-        ],
-        "quotes": [
-          "little bit more details to teddy bear eating chocolate animation"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The animation includes noticeable additional detail beyond the current version (at least 2 enhancements such as extra impact motion on bite, improved chew rhythm, added overlay accent, or crumb motion).",
-        "The animation remains replayable via the existing Replay Animation button.",
-        "The updated animation still respects prefers-reduced-motion by avoiding extra motion/overlays when reduced motion is enabled."
+        "On the Surprise view, the chocolate bar is visibly rendered in the teddy’s hands during the idle/anticipation portion of the animation (i.e., not off-screen and not occluded behind the teddy).",
+        "During the bite/chew phases, the chocolate continues to render and animate without disappearing due to layering (z-index) issues.",
+        "No other animation phases, overlays (speed lines/sparkles/crumbs), audio timing, or UI elements are changed beyond what is necessary to make the chocolate visible in the teddy’s hands."
       ]
     }
   ],
   "constraints": [
-    "Do not modify files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything under frontend/src/components/ui (compose only).",
-    "Do not add new backend functionality; backend/main.mo should remain unchanged unless strictly required.",
-    "All user-facing text must be in English.",
-    "Do not serve media assets (images/audio) from the backend; load them as frontend static assets."
+    "Do not modify any files under frontend/src/components/ui or any immutable hook paths listed in SYSTEM_CONTEXT.",
+    "Do not add backend changes for this fix; the issue is purely in the frontend animation rendering."
   ],
   "nonGoals": [
-    "Adding third-party audio libraries or streaming audio from external services.",
-    "Implementing backend persistence for sound preferences (local-only behavior is acceptable).",
-    "Changing the overall app flow (form -> surprise view) beyond what is needed for sound control and animation detail improvements."
+    "Do not redesign or retime the animation sequence beyond adjustments required to correctly render the chocolate in the teddy’s hands.",
+    "Do not add new sound effects or new UI controls."
   ],
   "imageRequirements": {
-    "required": [
-      "Anime-style bite impact overlay burst, transparent background (anime-bite-impact.dim_512x512.png)",
-      "Anime-style chew motion lines overlay, transparent background (anime-chew-lines.dim_512x512.png)"
-    ],
+    "required": [],
     "edits": []
   },
   "userProfileUpdate": {

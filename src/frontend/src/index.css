@@ -254,22 +254,22 @@
 /* Chocolate movement - anime style with overshoot */
 @keyframes anime-chocolate-anticipation {
     0% {
-        transform: translate(120px, -80px) scale(1) rotate(0deg);
+        transform: translate(80px, -60px) scale(1) rotate(-10deg);
         opacity: 1;
     }
     50% {
-        transform: translate(130px, -90px) scale(1.05) rotate(5deg);
+        transform: translate(90px, -70px) scale(1.05) rotate(-5deg);
         opacity: 1;
     }
     100% {
-        transform: translate(120px, -80px) scale(1) rotate(0deg);
+        transform: translate(80px, -60px) scale(1) rotate(-10deg);
         opacity: 1;
     }
 }
 
 @keyframes anime-chocolate-bite {
     0% {
-        transform: translate(120px, -80px) scale(1) rotate(0deg);
+        transform: translate(80px, -60px) scale(1) rotate(-10deg);
         opacity: 1;
     }
     100% {
@@ -459,7 +459,11 @@
     position: absolute;
     right: 10%;
     top: 20%;
-    z-index: 1;
+    z-index: 3;
+}
+
+.chocolate-container.anime-phase-idle {
+    transform: translate(80px, -60px) scale(1) rotate(-10deg);
 }
 
 .chocolate-container.anime-phase-anticipation {
@@ -468,14 +472,17 @@
 
 .chocolate-container.anime-phase-bite {
     animation: anime-chocolate-bite 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    z-index: 1;
 }
 
 .chocolate-container.anime-phase-chew {
     animation: anime-chocolate-chew 1s ease-out forwards;
+    z-index: 1;
 }
 
 .chocolate-container.anime-phase-satisfied {
     animation: anime-chocolate-satisfied 1s ease-out forwards;
+    z-index: 1;
 }
 
 /* Overlay effects */
@@ -486,7 +493,7 @@
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    z-index: 3;
+    z-index: 4;
     pointer-events: none;
     animation: speed-lines-appear 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
@@ -510,7 +517,7 @@
     transform: translate(-50%, -50%);
     width: 90%;
     height: 90%;
-    z-index: 3;
+    z-index: 4;
     pointer-events: none;
     animation: chew-lines-pulse 0.3s ease-out forwards;
 }
@@ -520,7 +527,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: 6;
     pointer-events: none;
     animation: sparkle-burst 0.6s ease-out forwards;
 }

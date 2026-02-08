@@ -2,47 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-eating-sound-effects-to-the-teddy-bear-eating-chocolate-animation-with-bite-chew-sounds-timed-to-the-existing-animation-phases-bite-each-mouth-open-close-chew-beat",
-      "featureTitle": "Add eating sound effects to the teddy bear eating chocolate animation, with bite/chew sounds timed to the existing animation phases (bite + each mouth open/close chew beat).",
+      "featureId": "feature-correct-the-teddy-eating-chocolate-animation-so-the-chocolate-bar-is-clearly-visible-inside-between-the-teddy-s-hands-not-missing-hidden-throughout-the-early-phases-while-keeping-the-rest-of-the-animation-and-visuals-unchanged",
+      "featureTitle": "Correct the teddy-eating-chocolate animation so the chocolate bar is clearly visible inside/between the teddy’s hands (not missing/hidden) throughout the early phases, while keeping the rest of the animation and visuals unchanged.",
       "files": [
-        "frontend/src/components/TeddyChocolateAnimation.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-provide-a-simple-user-control-to-mute-unmute-animation-sound-effects-on-the-surprise-view-and-ensure-sound-only-starts-after-a-user-interaction-that-triggers-the-surprise-replay-flow",
-      "featureTitle": "Provide a simple user control to mute/unmute animation sound effects on the Surprise view, and ensure sound only starts after a user interaction that triggers the Surprise/Replay flow.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/TeddyChocolateAnimation.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-increase-the-visual-detail-of-the-teddy-bear-eating-chocolate-animation-by-adding-additional-micro-actions-and-or-overlays-e-g-stronger-head-bob-squash-and-stretch-during-bite-impact-subtle-shake-on-crumbs-extra-sparkle-impact-accent-while-keeping-the-current-multi-phase-structure-idle-anticipation-bite-chew-satisfied",
-      "featureTitle": "Increase the visual detail of the teddy bear eating chocolate animation by adding additional micro-actions and/or overlays (e.g., stronger head bob/squash-and-stretch during bite impact, subtle shake on crumbs, extra sparkle/impact accent) while keeping the current multi-phase structure (idle/anticipation/bite/chew/satisfied).",
-      "files": [
-        "frontend/src/components/TeddyChocolateAnimation.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -53,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-9"
+        "REQ-10"
       ],
       "confidence": "high"
     }
