@@ -1,0 +1,86 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Synced eating SFX + enhanced teddy chocolate animation details",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Add bite + synced chew sound effects tied to existing teddy animation timing, respecting reduced-motion and using static frontend audio assets.",
+      "acceptanceCriteria": [
+        "When the animation reaches the 'bite' moment, a bite sound plays once.",
+        "During the 'chew' phase, short chew sounds play in sync with the existing mouthOpen toggles (multiple chews).",
+        "Sounds do not play when the user has prefers-reduced-motion enabled (match the current reduced-motion fallback behavior).",
+        "Audio assets are loaded from frontend static files (no backend serving)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/audio/teddy-bite.mp3",
+          "operation": "create",
+          "description": "Add a bite sound effect as a static audio asset to be used at the animation's bite moment."
+        },
+        {
+          "path": "frontend/public/assets/audio/teddy-chew.mp3",
+          "operation": "create",
+          "description": "Add a short chew sound effect as a static audio asset to be used repeatedly during chew beats."
+        },
+        {
+          "path": "frontend/src/components/TeddyChocolateAnimation.tsx",
+          "operation": "modify",
+          "description": "Implement audio preloading and playback for bite/chew sounds synchronized to the existing animation sequence (bite moment + each existing mouthOpen toggle), gated by prefers-reduced-motion and by a parent-provided 'sound allowed' + 'muted' state."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Add a mute/unmute control on the Surprise view and ensure sound only plays after user interaction that starts Surprise/Replay.",
+      "acceptanceCriteria": [
+        "A mute/unmute control is visible on the Surprise view (near the existing Replay Animation/Edit Message actions or within the animation area).",
+        "Default behavior allows sound during the animation after the user presses Create Surprise or Replay Animation.",
+        "Toggling mute immediately prevents any further bite/chew sounds from playing during that run and subsequent replays (until unmuted)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add local mute/unmute state and a visible control on the Surprise view (use the shadcn-ui Button component for the toggle; Verify the component's usage instructions before implementing.). Track a 'user initiated' signal so TeddyChocolateAnimation only attempts audio playback after Create Surprise or Replay Animation has been clicked, and pass props to control muted/armed behavior."
+        },
+        {
+          "path": "frontend/src/components/TeddyChocolateAnimation.tsx",
+          "operation": "modify",
+          "description": "Accept props for 'sound armed' (user-initiated) and 'muted', and ensure any scheduled bite/chew playback checks the latest muted state so toggling mute immediately prevents further sounds during the current run and subsequent replays."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Increase teddy eating animation visual detail with additional micro-actions/overlays while keeping the existing multi-phase structure and reduced-motion behavior.",
+      "acceptanceCriteria": [
+        "The animation includes noticeable additional detail beyond the current version (at least 2 enhancements such as extra impact motion on bite, improved chew rhythm, added overlay accent, or crumb motion).",
+        "The animation remains replayable via the existing Replay Animation button.",
+        "The updated animation still respects prefers-reduced-motion by avoiding extra motion/overlays when reduced motion is enabled."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/anime-bite-impact.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated transparent bite impact overlay image and make it available as a static frontend asset."
+        },
+        {
+          "path": "frontend/public/assets/generated/anime-chew-lines.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated transparent chew motion lines overlay image and make it available as a static frontend asset."
+        },
+        {
+          "path": "frontend/src/components/TeddyChocolateAnimation.tsx",
+          "operation": "modify",
+          "description": "Add at least two visual enhancements (e.g., timed bite impact overlay using frontend/public/assets/generated/anime-bite-impact.dim_512x512.png, chew motion lines overlay using frontend/public/assets/generated/anime-chew-lines.dim_512x512.png, crumb shake/bounce micro-action) while preserving the current phase sequence and ensuring replays still work via the existing key-based remount."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/adjust CSS keyframes and utility classes to support the new overlays and micro-actions (e.g., bite impact pop, chew line pulse synced to chew, optional crumb shake). Ensure reduced-motion media query disables/hides the new overlay/motion effects consistently with existing reduced-motion behavior."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main application component managing the two-view flow (landing form and surprise view) with state for girlfriend's name, custom message, animation replay control, mute/unmute functionality, and sound-armed state to control audio playback after user interaction.",
+  "frontend/src/components/TeddyChocolateAnimation.tsx": "Enhanced anime-style teddy eating chocolate animation with multi-phase sequence, dynamic mouth frame swapping, synchronized bite and chew sound effects, new visual overlays (bite impact, chew motion lines), and reduced-motion fallback support with audio preloading and mute control.",
+  "frontend/src/index.css": "Global styles with romantic OKLCH color palette and comprehensive anime-style animation keyframes including squash-and-stretch physics, snappy easing curves, enhanced overlay effects (speed lines, sparkles, crumbs, bite impact, chew lines), phase-based teddy/chocolate movements, and reduced-motion accessibility overrides.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family and maintaining the romantic color system integration."
+}

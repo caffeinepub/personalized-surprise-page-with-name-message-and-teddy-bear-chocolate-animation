@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "App to create a personalized surprise by entering a girlfriend's name and a custom message, then showing an animation of a teddy bear eating chocolate.",
+  "architectural_notes": [
+    "Animation polish request: add more detail to the teddy bear eating chocolate sequence (beyond current anime-style motion improvements)."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Anime-style bite impact overlay burst, transparent background (anime-bite-impact.dim_512x512.png)\n- Anime-style chew motion lines overlay, transparent background (anime-chew-lines.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-flow-where-the-user-can-enter-their-girlfriend-s-name-and-a-custom-message-then-tap-a-clear-call-to-action-e-g-surprise-to-reveal-the-personalized-surprise-view-displaying-the-entered-name-and-message",
+      "title": "Create a single-page flow where the user can enter their girlfriend’s name and a custom message, then tap a clear call-to-action (e.g., “Surprise”) to reveal the personalized surprise view displaying the entered name and message.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-on-screen-animation-sequence-of-a-teddy-bear-eating-chocolate-that-plays-on-the-surprise-view-and-is-visually-tied-to-the-personalized-message-reveal-e-g-message-appears-with-a-timed-fade-slide-while-the-teddy-animation-runs",
+      "title": "Implement an on-screen animation sequence of a teddy bear eating chocolate that plays on the surprise view and is visually tied to the personalized message reveal (e.g., message appears with a timed fade/slide while the teddy animation runs).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-romantic-visual-theme-across-the-app-colors-typography-spacing-and-components-suitable-for-a-surprise-for-girlfriend-experience-avoiding-a-blue-purple-dominant-palette",
+      "title": "Apply a coherent, romantic visual theme across the app (colors, typography, spacing, and components) suitable for a “surprise for girlfriend” experience, avoiding a blue/purple-dominant palette.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-needed-for-the-teddy-and-chocolate-animation-and-render-them-from-frontend-static-assets-do-not-serve-images-from-the-backend-place-generated-assets-under-frontend-public-assets-generated-and-use-those-files-in-the-animation",
+      "title": "Add generated static image assets needed for the teddy-and-chocolate animation and render them from frontend static assets (do not serve images from the backend). Place generated assets under frontend/public/assets/generated and use those files in the animation.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-teddy-bear-eating-chocolate-animation-to-feel-like-an-anime-character-eating-chocolate-by-adding-more-expressive-motion-e-g-head-bob-squash-and-stretch-blinking-eye-highlights-mouth-open-chew-cycle-and-snappier-timing-while-keeping-the-animation-tied-to-the-surprise-reveal-experience",
+      "title": "Update the teddy bear eating chocolate animation to feel like an anime character eating chocolate by adding more expressive motion (e.g., head bob + squash-and-stretch, blinking/eye highlights, mouth open/chew cycle, and snappier timing) while keeping the animation tied to the surprise reveal experience.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-animation-visuals-using-additional-static-overlays-frames-served-from-frontend-static-assets-to-support-the-anime-feel-e-g-speed-lines-sparkle-highlights-and-chew-frames-and-integrate-them-into-the-existing-teddychocolateanimation-component-sequence",
+      "title": "Enhance the animation visuals using additional static overlays/frames (served from frontend static assets) to support the anime feel (e.g., speed lines, sparkle highlights, and chew frames) and integrate them into the existing TeddyChocolateAnimation component sequence.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-eating-sound-effects-to-the-teddy-bear-eating-chocolate-animation-with-bite-chew-sounds-timed-to-the-existing-animation-phases-bite-each-mouth-open-close-chew-beat",
+      "title": "Add eating sound effects to the teddy bear eating chocolate animation, with bite/chew sounds timed to the existing animation phases (bite + each mouth open/close chew beat).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-a-simple-user-control-to-mute-unmute-animation-sound-effects-on-the-surprise-view-and-ensure-sound-only-starts-after-a-user-interaction-that-triggers-the-surprise-replay-flow",
+      "title": "Provide a simple user control to mute/unmute animation sound effects on the Surprise view, and ensure sound only starts after a user interaction that triggers the Surprise/Replay flow.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-visual-detail-of-the-teddy-bear-eating-chocolate-animation-by-adding-additional-micro-actions-and-or-overlays-e-g-stronger-head-bob-squash-and-stretch-during-bite-impact-subtle-shake-on-crumbs-extra-sparkle-impact-accent-while-keeping-the-current-multi-phase-structure-idle-anticipation-bite-chew-satisfied",
+      "title": "Increase the visual detail of the teddy bear eating chocolate animation by adding additional micro-actions and/or overlays (e.g., stronger head bob/squash-and-stretch during bite impact, subtle shake on crumbs, extra sparkle/impact accent) while keeping the current multi-phase structure (idle/anticipation/bite/chew/satisfied).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a personalized surprise app where the user inputs a name and custom message, then plays a teddy bear eating chocolate animation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Improve the teddy bear eating chocolate animation to feel more like an anime character eating chocolate (more expressive/anime-style motion)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add eating sound effects to the teddy bear eating chocolate animation (e.g., bite/chew sounds synced to the chew cycle)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Personalized surprise page with name + message and teddy bear chocolate animation",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

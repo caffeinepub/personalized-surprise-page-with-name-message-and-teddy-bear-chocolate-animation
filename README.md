@@ -1,2 +1,3 @@
-# personalized-surprise-page-with-name-message-and-teddy-bear-chocolate-animation
-Exported from Caffeine project: Personalized surprise page with name + message and teddy bear chocolate animation
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
